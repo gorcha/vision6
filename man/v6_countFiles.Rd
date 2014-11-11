@@ -7,7 +7,7 @@ v6_countFiles(search_criteria = "[]")
 }
 \arguments{
 \item{search_criteria}{(array - optional) An array of search criteria that
-selects the Files to be counted. See \\code{\link{v6_FileDetails}} for a
+selects the Files to be counted. See \\code{\link{v6_fileDetails}} for a
 description of the values that can be searched on.}
 }
 \value{

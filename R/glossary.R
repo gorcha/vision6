@@ -198,7 +198,8 @@
 #' \strong{Search Array}
 #' An array the specifies search criteria in a method that can perform a
 #' search. Search arrays are multidimensional and the array(s) they contain
-#' appear in the format: \code{(array(field name, relational operator, value)}
+#' appear in the format:
+#' \code{(array(field name, relational operator, value)}
 #' For example: \code{(array(estatement, not, 1)}. For more information, see
 #' Using Search Methods.
 #'
@@ -270,7 +271,7 @@
 #'
 #' @name glossary
 #' @docType class
-#' @title SLP Codes
+#' @title Vision6 Glossary of Terms
 NULL
 
 
