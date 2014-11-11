@@ -1,6 +1,6 @@
 #' Vision6 Search Criteria
 #'
-#' @section Introduction
+#' @section Introduction:
 #' The API includes search methods for most of its objects. Overall, the search
 #' methods for each object work in the same way. Each search method looks
 #' through groups of its object type (for example, Contacts within a List or all
@@ -8,7 +8,7 @@
 #' returns data for each matching item. If no search criteria are supplied, the
 #' search methods return data arrays for all items.
 #' 
-#' @section When to Use Get and Count Methods
+#' @section When to Use Get and Count Methods:
 #' Most search methods have corresponding get methods and count methods.
 #' 
 #' If you want to retrieve a single object and you know its ID, use the get
@@ -18,7 +18,7 @@
 #' object, use the Count method. It can use the same search criteria and spends
 #' much less time transferring data.
 #' 
-#' @section Obtaining IDs
+#' @section Obtaining IDs:
 #' You can use the basic search method for each type of object to obtain its ID
 #' for use in another method. If possible, use information that is unique to the
 #' object so that you don't get more than a few records returned. For example,
@@ -30,7 +30,7 @@
 #' method responds with no more than a few matching Messages, from which you can
 #' find the Message you are looking for, and use its ID.
 #' 
-#' @section Optional Parameters
+#' @section Optional Parameters:
 #' Many of the search methods include optional limit, sort_by, sort_order, and
 #' offset parameters. You can use the first three individually. limit is the
 #' maximum number of items returned from the results. sort_by is the name of the
@@ -40,7 +40,7 @@
 #' default, but you can also specify ascending. offset specifies how many
 #' results to skip before returning them.
 #' 
-#' @section Pagination
+#' @section Pagination:
 #' You can use limit, sort_by, sort_order, and offset together for the purpose
 #' of paginating your results. Most likely you want pages to appear in some
 #' significant order and direction, such as ascending by last_name. In this
@@ -57,7 +57,7 @@
 #' }
 #' and so on.
 #' 
-#' @section Using Search Criteria
+#' @section Using Search Criteria:
 #' 
 #' The search methods use search arrays to specify search criteria. Search
 #' arrays have the format:
@@ -72,7 +72,7 @@
 #' multiple search arrays are ANDed, this example looks for Contacts in List
 #' 12345 who want to buy a house.
 #' 
-#' @section Valid Relational Operators
+#' @section Valid Relational Operators:
 #' \tabular{ll}{
 #'   Operator     \tab Data Type \cr
 #'   exactly      \tab string/int \cr

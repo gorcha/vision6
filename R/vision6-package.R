@@ -4,7 +4,7 @@
 #' (\url{http://www.vision6.com.au/}) email system.
 #' 
 #' Implements all methods included in the Vision6 API
-#' (\code{http://developers.vision6.com.au/}).
+#' (\url{http://developers.vision6.com.au/}).
 #'
 #' @name vision6-package
 #' @aliases vision6

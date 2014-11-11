@@ -9,7 +9,7 @@
 #' The User who has administrative access to the Account.
 #'
 #' \strong{Activated}
-#' An activated Contact receives Messages from the system. Its \code{is_active
+#' An activated Contact receives Messages from the system. Its \code{is_active}
 #' Field is set to \emph{1}.
 #'
 #' \strong{Application Programming Interface (API)}

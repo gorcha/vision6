@@ -2,7 +2,7 @@
 #' Creates a new Contact List.
 #'
 #' @param list_details (array) A list or data frame of List details.
-#'        See \code\link{v6_listDetails}} for a description of valid values.
+#'        See \\code{\link{v6_listDetails}} for a description of valid values.
 #' @return the ID of the newly created List on success.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/addList}
 #' @export
@@ -28,7 +28,7 @@ v6_clearList <- function(list_id) {
 #' Counts the number of Lists that match the search criteria.
 #'
 #' @param search_criteria (array - optional) An array of search criteria that
-#'        selects the Lists to be counted. See \code\link{v6_listDetails}} for a
+#'        selects the Lists to be counted. See \\code{\link{v6_listDetails}} for a
 #'        description of the values that can be searched on.
 #' @return The number of Lists that match the search criteria.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/countLists}
@@ -54,7 +54,7 @@ v6_deleteList <- function(list_id) {
 #' Edits a List.
 #'
 #' @param list_details (array) A list or data frame of List details to be edited.
-#'        See \code\link{v6_listDetails}} for a description of valid values.
+#'        See \\code{\link{v6_listDetails}} for a description of valid values.
 #' @return the List ID on success.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/editList}
 #' @export

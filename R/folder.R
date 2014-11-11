@@ -2,7 +2,7 @@
 #' Creates a new Folder.
 #'
 #' @param folder_details (array) A list or data frame of Field details.
-#'        See \code\link{v6_folderDetails}} for a description of valid values.
+#'        See \\code{\link{v6_folderDetails}} for a description of valid values.
 #' @return the ID of the newly added Folder on success.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/addFolder}
 #' @export
@@ -18,7 +18,7 @@ v6_addFolder <- function(folder_details) {
 #' @param folder_type (string) The type of Folder to count.
 #'        Valid values are: list, message or file.
 #' @param search_criteria (array - optional) An array of search criteria that
-#'        selects the Folders to be counted. See \code\link{v6_folderDetails}}
+#'        selects the Folders to be counted. See \\code{\link{v6_folderDetails}}
 #'        for a description of the values that can be searched on.
 #' @return The number of Folders that match the search criteria.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/countFolders}
@@ -45,7 +45,7 @@ v6_deleteFolder <- function(folder_id) {
 #' Renames the specified Folder.
 #'
 #' @param folder_details (array) A list or data frame of Folder details to be edited.
-#'        See \code\link{v6_folderDetails}} for a description of valid values.
+#'        See \\code{\link{v6_folderDetails}} for a description of valid values.
 #' @return true on success.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/editFolder}
 #' @export

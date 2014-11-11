@@ -3,7 +3,7 @@
 #'
 #' @param list_id (int) The ID of the List to add the Field to.
 #' @param field_details (array) A list or data frame of Field details.
-#'        See \code\link{v6_fieldDetails}} for a description of valid values.
+#'        See \\code{\link{v6_fieldDetails}} for a description of valid values.
 #' @return the ID of the newly added Field on success.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/addField}
 #' @export
@@ -18,7 +18,7 @@ v6_addField <- function(list_id, field_details) {
 #'
 #' @param list_id (int) ID of the List containing the Fields.
 #' @param search_criteria (array - optional) An array of search criteria that
-#'        selects the Fields to be counted. See \code\link{v6_fieldDetails}} for
+#'        selects the Fields to be counted. See \\code{\link{v6_fieldDetails}} for
 #'        a description of the values that can be searched on.
 #' @return The number of Fields in the List that match the search criteria.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/countFields}
@@ -46,7 +46,7 @@ v6_deleteField <- function(list_id, field_id) {
 #'
 #' @param list_id (int) The ID of the List containing the Field.
 #' @param field_details (array) A list or data frame of Field details to be edited.
-#'        See \code\link{v6_fieldDetails}} for a description of valid values.
+#'        See \\code{\link{v6_fieldDetails}} for a description of valid values.
 #' @return the ID of the edited Field on success.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/editField}
 #' @export

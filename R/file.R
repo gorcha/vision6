@@ -2,7 +2,7 @@
 #' Counts the number of Files that match the search criteria.
 #'
 #' @param search_criteria (array - optional) An array of search criteria that
-#'        selects the Files to be counted. See \code\link{v6_FileDetails}} for a
+#'        selects the Files to be counted. See \\code{\link{v6_FileDetails}} for a
 #'        description of the values that can be searched on.
 #' @return The number of Files that match the search criteria.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/countFiles}
