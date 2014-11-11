@@ -1,5 +1,6 @@
 
-= Vision6 =
+Vision6
+=======
 
 `vision6` is an R interface to the [Vision6](http://www.vision6.com.au/) email system.
 

@@ -23,7 +23,7 @@ v6_addFolder <- function(folder_details) {
 #' @return The number of Folders that match the search criteria.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/countFolders}
 #' @export
-v6_countFolders <- function(folder_type, search_criteria) {
+v6_countFolders <- function(folder_type, search_criteria = "[]") {
   folder_type <- v6_quote(folder_type)
   req_str <- v6_req_string("countFolders", c(folder_type, search_criteria))
 
