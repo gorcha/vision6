@@ -87,7 +87,7 @@
 #' If an Operator is invalid, it defaults to exactly.
 #' 
 #' @name search_criteria
-#' @docType info
+#' @docType class
 #' @title Vision6 Search Criteria
 #' @seealso
 #'  \code{\link{searchContacts}}

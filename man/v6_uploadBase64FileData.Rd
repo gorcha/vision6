@@ -3,10 +3,17 @@
 \alias{v6_uploadBase64FileData}
 \title{Uploads a File into the File Manager.}
 \usage{
-v6_uploadBase64FileData(folder_id, duplicate_action, skip_resize_images,
-  skip_resample_images)
+v6_uploadBase64FileData(file_details, folder_id, duplicate_action,
+  skip_resize_images = NA, skip_resample_images = NA)
 }
 \arguments{
+\item{file_details}{(array) An associative array with the following values:
+\tabular{lll}{
+  Key \tab Type \tab Description \cr
+  name \tab string \tab The name to use for saving the File once it has been uploaded. \cr
+  data \tab string \tab The file data encoded with MIME base64. \cr
+}}
+
 \item{folder_id}{(int) The ID of the Folder that will contain the uploaded File.}
 
 \item{duplicate_action}{(string) Action to take if a File with the same name
@@ -32,13 +39,6 @@ v6_uploadBase64FileData(folder_id, duplicate_action, skip_resize_images,
 \itemize{
   \item true - Correct for degraded image quality when resizing.
   \item false - Do not correct for degraded image quality when resizing.
-}}
-
-\item{file_details}{(array) An associative array with the following values:
-\tabular{lll}{
-  Key \tab Type \tab Description \cr
-  name \tab string \tab The name to use for saving the File once it has been uploaded. \cr
-  data \tab string \tab The file data encoded with MIME base64. \cr
 }}
 }
 \value{

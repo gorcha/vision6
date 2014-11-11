@@ -269,7 +269,7 @@
 #' See User.
 #'
 #' @name glossary
-#' @docType info
+#' @docType class
 #' @title SLP Codes
 NULL
 

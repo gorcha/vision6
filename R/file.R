@@ -129,16 +129,18 @@ v6_searchFiles <- function(search_criteria = "[]",
 #' }
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/uploadBase64FileData}
 #' @export
-v6_uploadBase64FileData <- function(folder_id,
+v6_uploadBase64FileData <- function(file_details,
+                                    folder_id,
                                     duplicate_action,
-                                    skip_resize_images,
-                                    skip_resample_images) {
+                                    skip_resize_images = NA,
+                                    skip_resample_images = NA) {
+  file_string <- toJSON(file_details)
   duplicate_action <- v6_quote(duplicate_action)
   skip_resize_images <- v6_bool(skip_resize_images)
   skip_resample_images <- v6_bool(skip_resample_images)
 
   req_str <- v6_req_string("uploadBase64FileData",
-                           c(folder_id, duplicate_action,
+                           c(file_string, folder_id, duplicate_action,
                              skip_resize_images, skip_resample_images))
 
   v6_request(req_str)
