@@ -1,0 +1,33 @@
+	code	text	description	type
+100	100	Internal Server Error	The System encountered an error.	Server Error
+103	103	No Response from Server Call	The method did not return a value.	Server Error
+104	104	Method Not Found	An undefined method was called. Check your version string or code for typographical errors.	Server Error
+106	106	No XML Data Found	No XML was received by the server.	Server Error
+107	107	Invalid Method Name	An undefined Method was called. Check your version string or code for typographical errors.	Server Error
+108	108	Terms and Conditions not accepted	The Account you have logged into has not yet accepted the Terms and Conditions.	Server Error
+300	300	Authorisation Failed - Invalid Login	Username and/or Password is incorrect.	Method Error
+301	301	Authorisation Failed - Please log in first	Your session may have expired, please log in again.	Method Error
+302	302	Undefined Error in Method	The method experienced a fatal error.	Method Error
+303	303	Unable to Load List.	You may have attempted to access a List that does not exist or does not belong to the Account.	Method Error
+304	304	Unable to Load Contact	You may have attempted to access a Contact that does not exist or does not belong to the Account.	Method Error
+305	305	Unable to Load Field	You may have attempted to access a Field that does not exist or does not belong to the Account.	Method Error
+306	306	Unable to Load Folder	You may have attempted to access a Folder that does not exist or does not belong to the Account.	Method Error
+307	307	Unable to Load Email	You may have attempted to access an Email that does not exist or does not belong to the Account.	Method Error
+308	308	Unable to Load Batch	You may have attempted to access a Batch that does not exist or does not belong to the Account.	Method Error
+310	310	Invalid Method Parameters	The arguments you have passed are not the correct type. Check the method reference.	Method Error
+311	311	Invalid Search Parameter Format	The arguments you have passed are not the correct type. Check the method reference.	Method Error
+312	312	Invalid Email List IDs	The Email ID's passed to the method are not in the Folder.	Method Error
+313	313	Cannot Edit Account Lists	The List you are trying to edit is flagged as an Account List and cannot be modified.	Method Error
+314	314	No Contact List Specified for Batch Population	The List of Contacts to send the Batch to was empty.	Method Error
+315	315	Field Not Found	The Field you are trying to delete was not found.	Method Error
+316	316	Email Field Cannot be Edited	You cannot edit the Email Field.	Method Error
+317	317	Invalid Email Address Specified	The Email address passed to the method was in an incorrect format.	Method Error
+318	318	Duplicate Field Name	A Field with the specified name already exists in the List specified.	Method Error
+319	319	Duplicate Folder Name / Type	A Folder of the same name and same type already exists.	Method Error
+320	320	Failed to Update any Contacts	No Contacts could be found or updated within the context of an editContacts operation.	Method Error
+321	321	Administrative Access Denied	The currently logged in Account does not have access to use the Account administration methods.	Method Error
+322	322	Username Unavailable	An Account User operation did not succeed because the specified username is not allowed.	Method Error
+323	323	Unable to Delete Folder	Folder could not be deleted; either it is the last Folder, it is not empty, or it is a system Folder (for example, the List Emails folder)	Method Error
+324	324	Cannot Delete User	You cannot delete Users if you are not the owner of the Account, or you are attempting to delete the Account owner.	Method Error
+325	325	Reserved Field Name	The specified Field name is reserved for use by the system	Method Error
+399	399	You have reached the maximum number of allowed concurrent API requests	The Account has reached the limit on the number of concurrent API requests that can be made at any one time.	Method Error
