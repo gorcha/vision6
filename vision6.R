@@ -16,6 +16,16 @@ v6_quote <- function(d) {
   paste0("\"", d, "\"")
 }
 
+v6_bool <- function(d) {
+  if (d == TRUE) {
+    return("true")
+  } else if (d == FALSE) {
+    return("false")
+  } else {
+    return("")
+  }
+}
+
 v6_req_string <- function(method, params = NULL) {
   req_string <- paste0(
     "{
