@@ -1,23 +1,54 @@
 #' Vision6 Search Criteria
 #'
 #' @section Introduction
-#' The API includes search methods for most of its objects. Overall, the search methods for each object work in the same way. Each search method looks through groups of its object type (for example, Contacts within a List or all Folders in the system) to find those that match user-supplied criteria, returns data for each matching item. If no search criteria are supplied, the search methods return data arrays for all items.
+#' The API includes search methods for most of its objects. Overall, the search
+#' methods for each object work in the same way. Each search method looks
+#' through groups of its object type (for example, Contacts within a List or all
+#' Folders in the system) to find those that match user-supplied criteria,
+#' returns data for each matching item. If no search criteria are supplied, the
+#' search methods return data arrays for all items.
 #' 
 #' @section When to Use Get and Count Methods
 #' Most search methods have corresponding get methods and count methods.
 #' 
-#' If you want to retrieve a single object and you know its ID, use the get method. The get method searches for one record and is much faster.
+#' If you want to retrieve a single object and you know its ID, use the get
+#' method. The get method searches for one record and is much faster.
 #' 
-#' If you only need to know the number of objects, and not the details of each object, use the Count method. It can use the same search criteria and spends much less time transferring data.
+#' If you only need to know the number of objects, and not the details of each
+#' object, use the Count method. It can use the same search criteria and spends
+#' much less time transferring data.
 #' 
 #' @section Obtaining IDs
-#' You can use the basic search method for each type of object to obtain its ID for use in another method. If possible, use information that is unique to the object so that you don't get more than a few records returned. For example, if you know a Contact's List ID and Email address, you can use searchContacts to search the List for the Email address and get back a few Contacts (or one Contact if there are no duplicates) and find the Contact ID in the data returned. This is true of any object. For example, if you know the name of a Message but not its ID, you can use searchMessages to search on the name. The method responds with no more than a few matching Messages, from which you can find the Message you are looking for, and use its ID.
+#' You can use the basic search method for each type of object to obtain its ID
+#' for use in another method. If possible, use information that is unique to the
+#' object so that you don't get more than a few records returned. For example,
+#' if you know a Contact's List ID and Email address, you can use searchContacts
+#' to search the List for the Email address and get back a few Contacts (or one
+#' Contact if there are no duplicates) and find the Contact ID in the data
+#' returned. This is true of any object. For example, if you know the name of a
+#' Message but not its ID, you can use searchMessages to search on the name. The
+#' method responds with no more than a few matching Messages, from which you can
+#' find the Message you are looking for, and use its ID.
 #' 
 #' @section Optional Parameters
-#' Many of the search methods include optional limit, sort_by, sort_order, and offset parameters. You can use the first three individually. limit is the maximum number of items returned from the results. sort_by is the name of the value to sort the results by before returning them. If you do not specify an sort_by, the search method returns results unsorted. The value for sort_order is only significant if you specify sort_by. sort_order is descending by default, but you can also specify ascending. offset specifies how many results to skip before returning them.
+#' Many of the search methods include optional limit, sort_by, sort_order, and
+#' offset parameters. You can use the first three individually. limit is the
+#' maximum number of items returned from the results. sort_by is the name of the
+#' value to sort the results by before returning them. If you do not specify an
+#' sort_by, the search method returns results unsorted. The value for sort_order
+#' is only significant if you specify sort_by. sort_order is descending by
+#' default, but you can also specify ascending. offset specifies how many
+#' results to skip before returning them.
 #' 
 #' @section Pagination
-#' You can use limit, sort_by, sort_order, and offset together for the purpose of paginating your results. Most likely you want pages to appear in some significant order and direction, such as ascending by last_name. In this case, you set sort_by to last_name and order_direction to ASC. Sorting takes place in the system after it retrieves results. Then it narrows the results using offset and limit and returns them. To show 20 of the results in last_name order per page, set up a series of searches with limit and offset containing the following values:
+#' You can use limit, sort_by, sort_order, and offset together for the purpose
+#' of paginating your results. Most likely you want pages to appear in some
+#' significant order and direction, such as ascending by last_name. In this
+#' case, you set sort_by to last_name and order_direction to ASC. Sorting takes
+#' place in the system after it retrieves results. Then it narrows the results
+#' using offset and limit and returns them. To show 20 of the results in
+#' last_name order per page, set up a series of searches with limit and offset
+#' containing the following values:
 #' 
 #' \itemize{
 #'  \item 1st page: limit=20, offset=0
@@ -26,15 +57,20 @@
 #' }
 #' and so on.
 #' 
-#' Using Search Criteria
+#' @section Using Search Criteria
 #' 
-#' The search methods use search arrays to specify search criteria. Search arrays have the format:
-#' 
-#' (array(name, relational operator, value))
+#' The search methods use search arrays to specify search criteria. Search
+#' arrays have the format:
+#' \code{(array(name, relational operator, value))}
+#'
 #' For example:
+#' \code{(array('estatement', 'not', '1'))}
 #' 
-#' (array('estatement', 'not', '1'))
-#' All search arrays are contained within multidimensional arrays (container arrays that contain one or more arrays). The following example shows how a container array holding two search arrays uses the searchLists method. Since multiple search arrays are ANDed, this example looks for Contacts in List 12345 who want to buy a house.
+#' All search arrays are contained within multidimensional arrays (container
+#' arrays that contain one or more arrays). The following example shows how a
+#' container array holding two search arrays uses the searchLists method. Since
+#' multiple search arrays are ANDed, this example looks for Contacts in List
+#' 12345 who want to buy a house.
 #' 
 #' @section Valid Relational Operators
 #' \tabular{ll}{
@@ -51,7 +87,7 @@
 #' If an Operator is invalid, it defaults to exactly.
 #' 
 #' @name search_criteria
-#' @docType class
+#' @docType info
 #' @title Vision6 Search Criteria
 #' @seealso
 #'  \code{\link{searchContacts}}
@@ -59,28 +95,6 @@
 #'  \code{\link{searchFolders}}
 #'  \code{\link{searchFiles}}
 #'  \code{\link{searchPreviousUnsubscribers}}
-
-
-
-#'
-#' SLP codes are designed to allow efficient comparison of localities from
-#' address strings by combining relevant address fields and normalising the
-#' position of direction in the locality name.
-#' The SLP codes are strings of the form \strong{SDDDDL+PPPP}, where:
-#' \tabular{rl}{
-#' S \tab State code\cr
-#' DDDD \tab Direction component of locality\cr
-#' L+ \tab Text component of locality\cr
-#' PPPP \tab Postcode\cr
-#' }
-#' Where no direction exists in the locality name, DDDD=0000
-#'
-#' @name slp
-#' @docType class
-#' @title SLP Codes
-#' @seealso \code{\link{slp.code}},
-#'          \code{\link{slp.state.code}},
-#'          \code{\link{slp.loc.code}}
 NULL
 
 
