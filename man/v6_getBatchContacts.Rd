@@ -3,7 +3,8 @@
 \alias{v6_getBatchContacts}
 \title{v6_getBatchContacts}
 \usage{
-v6_getBatchContacts()
+v6_getBatchContacts(batch_id, search_criteria = "[]", limit = 0,
+  offset = 0, sort_by = "", sort_order = "")
 }
 \description{
 v6_getBatchContacts

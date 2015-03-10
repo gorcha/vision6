@@ -1,6 +1,7 @@
 
 options(v6_url = "http://research.srcentre.com.au/api/jsonrpcserver.php?version=3.0",
-        v6_key = "de13485929e10e7a4a878f93d4e7981fde1251c3e3c228a3fa9595fad4e75a38")
+        # v6_key = "de13485929e10e7a4a878f93d4e7981fde1251c3e3c228a3fa9595fad4e75a38")
+        v6_key = "c0fcd2dc0fcf14e82f51b4aed88bff90c0fdc3da839b16cd639b6f34d88b4397")
 
 v6_error_codes_file <- system.file("extdata",
                                    "error_codes.txt",
@@ -40,6 +41,7 @@ v6_req_string <- function(method, params = NULL) {
   gsub("\\n", "", req_string)
 }
 
+#' @export
 v6_search <- function(name, operator, value) {
   max_len <- max(length(name), length(operator), length(value))
 

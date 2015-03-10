@@ -45,7 +45,19 @@ v6_getMessagesSentToContact <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/searchMessages}
 #' @export
-v6_searchMessages <- function() {
+v6_searchMessages <- function(search_criteria = "[]",
+                              limit = 0,
+                              offset = 0,
+                              sort_by = "",
+                              sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("searchMessages",
+                           c(search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
 }
 
 

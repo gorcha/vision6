@@ -13,18 +13,30 @@ v6_addBatch <- function() {
 v6_addBatchByContactSearch <- function() {
 }
 
-#' v6_countBatches
+#' Counts the number of Batches that match the search criteria.
 #'
+#' @param search_criteria (array - optional) An array of search criteria that
+#'        selects the Batches to be counted. See \\code{\link{v6_batchDetails}}
+#'        for a description of the values that can be searched on.
+#' @return The number of Batches that match the search criteria.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/countBatches}
 #' @export
-v6_countBatches <- function() {
+v6_countBatches <- function(search_criteria = "[]") {
+  req_str <- v6_req_string("countBatches", search_criteria)
+
+  v6_request(req_str)
 }
 
-#' v6_deleteBatch
+#' Deletes the specified Batch.
 #'
+#' @param batch_id (int) The ID of the Batch to delete.
+#' @return true on success.
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/deleteBatch}
 #' @export
-v6_deleteBatch <- function() {
+v6_deleteBatch <- function(batch_id) {
+  req_str <- v6_req_string("deleteBatch", batch_id)
+
+  v6_request(req_str)
 }
 
 #' v6_editBatch
@@ -52,28 +64,70 @@ v6_getAutoresponderBatchId <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchAutoDeactivated}
 #' @export
-v6_getBatchAutoDeactivated <- function() {
+v6_getBatchAutoDeactivated <- function(batch_id,
+                                       search_criteria = "[]",
+                                       limit = 0,
+                                       offset = 0,
+                                       sort_by = "",
+                                       sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("getBatchAutoDeactivated",
+                           c(batch_id, search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchBounced
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchBounced}
 #' @export
-v6_getBatchBounced <- function() {
+v6_getBatchBounced <- function(batch_id,
+                               search_criteria = "[]",
+                               limit = 0,
+                               offset = 0,
+                               sort_by = "",
+                               sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("getBatchBounced",
+                           c(batch_id, search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchById
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchById}
 #' @export
-v6_getBatchById <- function() {
+v6_getBatchById <- function(batch_id) {
+  req_str <- v6_req_string("getBatchById", batch_id)
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchComplained
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchComplained}
 #' @export
-v6_getBatchComplained <- function() {
+v6_getBatchComplained <- function(batch_id,
+                                  search_criteria = "[]",
+                                  limit = 0,
+                                  offset = 0,
+                                  sort_by = "",
+                                  sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("getBatchComplained",
+                           c(batch_id, search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchContactLinks
@@ -87,7 +141,20 @@ v6_getBatchContactLinks <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchContacts}
 #' @export
-v6_getBatchContacts <- function() {
+v6_getBatchContacts <- function(batch_id,
+                                  search_criteria = "[]",
+                                  limit = 0,
+                                  offset = 0,
+                                  sort_by = "",
+                                  sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("getBatchContacts",
+                           c(batch_id, search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchIdByQueueId
@@ -108,49 +175,110 @@ v6_getBatchLinkContacts <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchLinkStatistics}
 #' @export
-v6_getBatchLinkStatistics <- function() {
+v6_getBatchLinkStatistics <- function(batch_id) {
+  req_str <- v6_req_string("getBatchLinkStatistics", batch_id)
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchNotOpened
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchNotOpened}
 #' @export
-v6_getBatchNotOpened <- function() {
+v6_getBatchNotOpened <- function(batch_id,
+                                 search_criteria = "[]",
+                                 limit = 0,
+                                 offset = 0,
+                                 sort_by = "",
+                                 sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("getBatchNotOpened",
+                           c(batch_id, search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchOpened
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchOpened}
 #' @export
-v6_getBatchOpened <- function() {
+v6_getBatchOpened <- function(batch_id,
+                              search_criteria = "[]",
+                              limit = 0,
+                              offset = 0,
+                              sort_by = "",
+                              sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("getBatchOpened",
+                           c(batch_id, search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchResponses
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchResponses}
 #' @export
-v6_getBatchResponses <- function() {
+v6_getBatchResponses <- function(batch_id,
+                                 search_criteria = "[]",
+                                 limit = 0,
+                                 offset = 0,
+                                 sort_by = "",
+                                 sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("getBatchResponses",
+                           c(batch_id, search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchStatistics
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchStatistics}
 #' @export
-v6_getBatchStatistics <- function() {
+v6_getBatchStatistics <- function(batch_id) {
+  req_str <- v6_req_string("getBatchStatistics", batch_id)
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchStatus
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchStatus}
 #' @export
-v6_getBatchStatus <- function() {
+v6_getBatchStatus <- function(batch_id) {
+  req_str <- v6_req_string("getBatchStatus", batch_id)
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchUnsubscribed
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchUnsubscribed}
 #' @export
-v6_getBatchUnsubscribed <- function() {
+v6_getBatchUnsubscribed <- function(batch_id,
+                                    search_criteria = "[]",
+                                    limit = 0,
+                                    offset = 0,
+                                    sort_by = "",
+                                    sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("getBatchUnsubscribed",
+                           c(batch_id, search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
 }
 
 #' v6_getBatchUpdated
@@ -164,7 +292,18 @@ v6_getBatchUpdated <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/searchBatches}
 #' @export
-v6_searchBatches <- function() {
-}
+v6_searchBatches <- function(search_criteria = "[]",
+                             limit = 0,
+                             offset = 0,
+                             sort_by = "",
+                             sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
 
+  req_str <- v6_req_string("searchBatches",
+                           c(search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
+}
 

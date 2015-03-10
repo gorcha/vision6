@@ -3,7 +3,8 @@
 \alias{v6_searchContacts}
 \title{v6_searchContacts}
 \usage{
-v6_searchContacts()
+v6_searchContacts(list_id, search_criteria = "[]", limit = 0, offset = 0,
+  sort_by = "", sort_order = "", returned_fields = "all")
 }
 \description{
 v6_searchContacts

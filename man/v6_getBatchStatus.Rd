@@ -3,7 +3,7 @@
 \alias{v6_getBatchStatus}
 \title{v6_getBatchStatus}
 \usage{
-v6_getBatchStatus()
+v6_getBatchStatus(batch_id)
 }
 \description{
 v6_getBatchStatus

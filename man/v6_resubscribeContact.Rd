@@ -3,7 +3,7 @@
 \alias{v6_resubscribeContact}
 \title{v6_resubscribeContact}
 \usage{
-v6_resubscribeContact()
+v6_resubscribeContact(list_id, contact_id)
 }
 \description{
 v6_resubscribeContact

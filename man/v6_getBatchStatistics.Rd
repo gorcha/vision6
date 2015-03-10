@@ -3,7 +3,7 @@
 \alias{v6_getBatchStatistics}
 \title{v6_getBatchStatistics}
 \usage{
-v6_getBatchStatistics()
+v6_getBatchStatistics(batch_id)
 }
 \description{
 v6_getBatchStatistics

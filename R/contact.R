@@ -66,14 +66,32 @@ v6_reactivateContact <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/resubscribeContact}
 #' @export
-v6_resubscribeContact <- function() {
+v6_resubscribeContact <- function(list_id, contact_id) {
+  req_str <- v6_req_string("resubscribeContact", c(list_id, contact_id))
+
+  v6_request(req_str)
 }
+
 
 #' v6_searchContacts
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/searchContacts}
 #' @export
-v6_searchContacts <- function() {
+v6_searchContacts <- function(list_id,
+                              search_criteria = "[]",
+                              limit = 0,
+                              offset = 0,
+                              sort_by = "",
+                              sort_order = "",
+                              returned_fields = "all") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("searchContacts",
+                           c(list_id, search_criteria, limit, offset,
+                             sort_by, sort_order, toJSON(returned_fields)))
+
+  v6_request(req_str)
 }
 
 #' v6_searchPreviousUnsubscribers
@@ -94,14 +112,22 @@ v6_subscribeContact <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/unsubscribeContact}
 #' @export
-v6_unsubscribeContact <- function() {
+v6_unsubscribeContact <- function(list_id, email_address) {
+  email_address <- v6_quote(email_address)
+
+  req_str <- v6_req_string("unsubscribeContact", c(list_id, email_address))
+
+  v6_request(req_str)
 }
 
 #' v6_unsubscribeContactById
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/unsubscribeContactById}
 #' @export
-v6_unsubscribeContactById <- function() {
+v6_unsubscribeContactById <- function(list_id, contact_id) {
+  req_str <- v6_req_string("unsubscribeContact", c(list_id, contact_id))
+
+  v6_request(req_str)
 }
 
 

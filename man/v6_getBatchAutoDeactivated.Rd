@@ -3,7 +3,8 @@
 \alias{v6_getBatchAutoDeactivated}
 \title{v6_getBatchAutoDeactivated}
 \usage{
-v6_getBatchAutoDeactivated()
+v6_getBatchAutoDeactivated(batch_id, search_criteria = "[]", limit = 0,
+  offset = 0, sort_by = "", sort_order = "")
 }
 \description{
 v6_getBatchAutoDeactivated

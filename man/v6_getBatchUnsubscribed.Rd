@@ -3,7 +3,8 @@
 \alias{v6_getBatchUnsubscribed}
 \title{v6_getBatchUnsubscribed}
 \usage{
-v6_getBatchUnsubscribed()
+v6_getBatchUnsubscribed(batch_id, search_criteria = "[]", limit = 0,
+  offset = 0, sort_by = "", sort_order = "")
 }
 \description{
 v6_getBatchUnsubscribed

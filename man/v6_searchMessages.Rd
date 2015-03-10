@@ -3,7 +3,8 @@
 \alias{v6_searchMessages}
 \title{v6_searchMessages}
 \usage{
-v6_searchMessages()
+v6_searchMessages(search_criteria = "[]", limit = 0, offset = 0,
+  sort_by = "", sort_order = "")
 }
 \description{
 v6_searchMessages

@@ -3,7 +3,8 @@
 \alias{v6_searchBatches}
 \title{v6_searchBatches}
 \usage{
-v6_searchBatches()
+v6_searchBatches(search_criteria = "[]", limit = 0, offset = 0,
+  sort_by = "", sort_order = "")
 }
 \description{
 v6_searchBatches

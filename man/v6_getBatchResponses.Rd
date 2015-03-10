@@ -3,7 +3,8 @@
 \alias{v6_getBatchResponses}
 \title{v6_getBatchResponses}
 \usage{
-v6_getBatchResponses()
+v6_getBatchResponses(batch_id, search_criteria = "[]", limit = 0,
+  offset = 0, sort_by = "", sort_order = "")
 }
 \description{
 v6_getBatchResponses

@@ -3,7 +3,7 @@
 \alias{v6_getBatchById}
 \title{v6_getBatchById}
 \usage{
-v6_getBatchById()
+v6_getBatchById(batch_id)
 }
 \description{
 v6_getBatchById

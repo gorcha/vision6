@@ -3,7 +3,8 @@
 \alias{v6_getBatchComplained}
 \title{v6_getBatchComplained}
 \usage{
-v6_getBatchComplained()
+v6_getBatchComplained(batch_id, search_criteria = "[]", limit = 0,
+  offset = 0, sort_by = "", sort_order = "")
 }
 \description{
 v6_getBatchComplained

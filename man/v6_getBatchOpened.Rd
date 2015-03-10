@@ -3,7 +3,8 @@
 \alias{v6_getBatchOpened}
 \title{v6_getBatchOpened}
 \usage{
-v6_getBatchOpened()
+v6_getBatchOpened(batch_id, search_criteria = "[]", limit = 0, offset = 0,
+  sort_by = "", sort_order = "")
 }
 \description{
 v6_getBatchOpened
