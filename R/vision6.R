@@ -52,16 +52,22 @@ v6_search <- function(name, operator, value) {
   search_str <- c()
 
   for (i in 1:length(value)) {
-    search_str <- c(search_str, paste0("[ \"",
-                                       name[i],
-                                       "\", \"",
-                                       operator[i],
-                                       "\", \"",
-                                       value[i],
-                                       "\" ]"))
+    search_str <- c(search_str, paste0("[ ",
+                                       v6_quote(name[i]),
+                                       ", ",
+                                       v6_quote(operator[i]),
+                                       ", ",
+                                       ifelse(is.numeric(value[i]),
+                                              value[i],
+                                              v6_quote(value[i])),
+                                       " ]"))
   }
 
-  paste0("[", paste0(search_str, collapse = ", "), "]")
+  if (length(search_str) > 1) {
+    search_str <- paste0("[", paste0(search_str, collapse = ", "), "]")
+  }
+
+  search_str
 }
 
 v6_request <- function(req_str) {

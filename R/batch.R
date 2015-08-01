@@ -10,7 +10,17 @@ v6_addBatch <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/addBatchByContactSearch}
 #' @export
-v6_addBatchByContactSearch <- function() {
+v6_addBatchByContactSearch <- function(message_id,
+                                       lists,
+                                       search_criteria = "[]",
+                                       send_time = "",
+                                       is_scheduled = FALSE) {
+
+  req_str <- v6_req_string("addBatchByContactSearch", 
+                           c(message_id, toJSON(lists), search_criteria,
+                             send_time, v6_bool(is_scheduled)))
+
+  v6_request(req_str)
 }
 
 #' Counts the number of Batches that match the search criteria.
@@ -161,7 +171,10 @@ v6_getBatchContacts <- function(batch_id,
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchIdByQueueId}
 #' @export
-v6_getBatchIdByQueueId <- function() {
+v6_getBatchIdByQueueId <- function(queue_id) {
+  req_str <- v6_req_string("getBatchIdByQueueId", queue_id)
+  
+  v6_request(req_str)
 }
 
 #' v6_getBatchLinkContacts
