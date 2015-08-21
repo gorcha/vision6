@@ -52,14 +52,19 @@ v6_search <- function(name, operator, value) {
   search_str <- c()
 
   for (i in 1:length(value)) {
+    if (is.numeric(value[i])) {
+      val <- value[i]
+    } else if (is.logical(value[i])) {
+      val <- v6_bool(value[i])
+    } else {
+      val <- v6_quote(value[i])
+    }
     search_str <- c(search_str, paste0("[ ",
                                        v6_quote(name[i]),
                                        ", ",
                                        v6_quote(operator[i]),
                                        ", ",
-                                       ifelse(is.numeric(value[i]),
-                                              value[i],
-                                              v6_quote(value[i])),
+                                       val,
                                        " ]"))
   }
 

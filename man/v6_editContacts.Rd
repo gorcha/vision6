@@ -4,7 +4,7 @@
 \alias{v6_editContacts}
 \title{v6_editContacts}
 \usage{
-v6_editContacts()
+v6_editContacts(list_id, contacts, trigger_update_profile = FALSE)
 }
 \description{
 v6_editContacts

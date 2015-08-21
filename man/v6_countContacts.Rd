@@ -4,7 +4,7 @@
 \alias{v6_countContacts}
 \title{v6_countContacts}
 \usage{
-v6_countContacts()
+v6_countContacts(list_id, search_criteria = "[]")
 }
 \description{
 v6_countContacts

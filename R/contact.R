@@ -17,7 +17,12 @@ v6_confirmContact <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/countContacts}
 #' @export
-v6_countContacts <- function() {
+v6_countContacts <- function(list_id,
+                              search_criteria = "[]") {
+  req_str <- v6_req_string("countContacts",
+                           c(list_id, search_criteria))
+
+  v6_request(req_str)
 }
 
 #' v6_countPreviousUnsubscribers
@@ -31,7 +36,10 @@ v6_countPreviousUnsubscribers <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/deactivateContact}
 #' @export
-v6_deactivateContact <- function() {
+v6_deactivateContact <- function(list_id, contact_id) {
+  req_str <- v6_req_string("deactivateContact", c(list_id, contact_id))
+
+  v6_request(req_str)
 }
 
 #' v6_deleteContacts
@@ -45,7 +53,13 @@ v6_deleteContacts <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/editContacts}
 #' @export
-v6_editContacts <- function() {
+v6_editContacts <- function(list_id, contacts, trigger_update_profile = FALSE) {
+  trigger_update_profile <- v6_bool(trigger_update_profile)
+
+  req_str <- v6_req_string("editContacts",
+                           c(list_id, toJSON(contacts), trigger_update_profile))
+
+  v6_request(req_str)
 }
 
 #' v6_getContactById
@@ -125,7 +139,7 @@ v6_unsubscribeContact <- function(list_id, email_address) {
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/unsubscribeContactById}
 #' @export
 v6_unsubscribeContactById <- function(list_id, contact_id) {
-  req_str <- v6_req_string("unsubscribeContact", c(list_id, contact_id))
+  req_str <- v6_req_string("unsubscribeContactById", c(list_id, contact_id))
 
   v6_request(req_str)
 }
