@@ -73,7 +73,10 @@ v6_getContactById <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/reactivateContact}
 #' @export
-v6_reactivateContact <- function() {
+v6_reactivateContact <- function(list_id, contact_id) {
+  req_str <- v6_req_string("reactivateContact", c(list_id, contact_id))
+
+  v6_request(req_str)
 }
 
 #' v6_resubscribeContact
