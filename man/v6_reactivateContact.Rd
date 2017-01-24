@@ -4,7 +4,7 @@
 \alias{v6_reactivateContact}
 \title{v6_reactivateContact}
 \usage{
-v6_reactivateContact()
+v6_reactivateContact(list_id, contact_id)
 }
 \description{
 v6_reactivateContact

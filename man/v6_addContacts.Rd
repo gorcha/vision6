@@ -4,7 +4,8 @@
 \alias{v6_addContacts}
 \title{v6_addContacts}
 \usage{
-v6_addContacts()
+v6_addContacts(list_id, contacts, overwrite = FALSE,
+  remove_unsubscribers = 0)
 }
 \description{
 v6_addContacts

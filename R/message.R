@@ -31,7 +31,13 @@ v6_editMessage <- function() {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getMessageById}
 #' @export
-v6_getMessageById <- function() {
+v6_getMessageById <- function(message_id, retrieve_content = TRUE) {
+  retrieve_content <- v6_bool(retrieve_content)
+  req_str <- v6_req_string("getMessageById",
+                           c(message_id, retrieve_content))
+  
+  v6_request(req_str)
+  
 }
 
 #' v6_getMessagesSentToContact

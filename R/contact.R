@@ -3,7 +3,14 @@
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/addContacts}
 #' @export
-v6_addContacts <- function() {
+v6_addContacts <- function(list_id, contacts, overwrite = FALSE, remove_unsubscribers = 0) {
+  overwrite <- v6_bool(overwrite)
+
+  req_str <- v6_req_string("addContacts",
+                           c(list_id, toJSON(contacts), overwrite,
+                             remove_unsubscribers))
+
+  v6_request(req_str)
 }
 
 #' v6_confirmContact

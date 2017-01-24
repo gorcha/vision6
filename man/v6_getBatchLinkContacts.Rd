@@ -4,7 +4,8 @@
 \alias{v6_getBatchLinkContacts}
 \title{v6_getBatchLinkContacts}
 \usage{
-v6_getBatchLinkContacts()
+v6_getBatchLinkContacts(batch_id, link, search_criteria = "[]", limit = 0,
+  offset = 0, sort_by = "", sort_order = "")
 }
 \description{
 v6_getBatchLinkContacts

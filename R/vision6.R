@@ -78,7 +78,7 @@ v6_search <- function(name, operator, value) {
 v6_request <- function(req_str) {
   req_return <- POST(getOption("v6_url"), body = req_str, config = content_type_json())
 
-  req_json <- content(req_return, type = "text/plain")
+  suppressMessages(req_json <- content(req_return, type = "text/plain"))
   req_json <- gsub("^[^[]*\\[", "[", req_json)
   req_json <- gsub("\\][^]]*$", "]", req_json)
 

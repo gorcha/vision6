@@ -144,7 +144,22 @@ v6_getBatchComplained <- function(batch_id,
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchContactLinks}
 #' @export
-v6_getBatchContactLinks <- function() {
+v6_getBatchContactLinks <- function(batch_id,
+                                    send_id = 0,
+                                    search_criteria = "[]",
+                                    limit = 0,
+                                    offset = 0,
+                                    sort_by = "",
+                                    sort_order = "") {
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("getBatchContactLinks",
+                           c(batch_id, send_id, search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
+
 }
 
 #' v6_getBatchContacts
@@ -181,7 +196,23 @@ v6_getBatchIdByQueueId <- function(queue_id) {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/getBatchLinkContacts}
 #' @export
-v6_getBatchLinkContacts <- function() {
+v6_getBatchLinkContacts <- function(batch_id,
+                                    link,
+                                    search_criteria = "[]",
+                                    limit = 0,
+                                    offset = 0,
+                                    sort_by = "",
+                                    sort_order = "") {
+  link <- v6_quote(link)
+  sort_by <- v6_quote(sort_by)
+  sort_order <- v6_quote(sort_order)
+
+  req_str <- v6_req_string("getBatchLinkContacts",
+                           c(batch_id, link, search_criteria, limit, offset,
+                             sort_by, sort_order))
+
+  v6_request(req_str)
+
 }
 
 #' v6_getBatchLinkStatistics
