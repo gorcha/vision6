@@ -53,8 +53,12 @@ v6_deactivateContact <- function(list_id, contact_id) {
 #'
 #' @seealso \url{http://developers.vision6.com.au/3.0/method/deleteContacts}
 #' @export
-v6_deleteContacts <- function() {
+v6_deleteContacts <- function(list_id, contact_id) {
+  req_str <- v6_req_string("deleteContacts", c(list_id, toJSON(contact_id)))
+  
+  v6_request(req_str)
 }
+
 
 #' v6_editContacts
 #'

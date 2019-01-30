@@ -351,3 +351,14 @@ v6_searchBatches <- function(search_criteria = "[]",
   v6_request(req_str)
 }
 
+
+#' Survey link clicks
+#' 
+#' Get contacts that have clicked the surveylink 
+#'
+#' @param batch_id 
+#'
+#' @export
+v6_surveylink <- function(batch_id) {
+  v6_getBatchLinkContacts(batch_id, "%%srvylink%%")
+}
