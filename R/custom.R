@@ -76,10 +76,7 @@ multi_contacts <- function(lid, n = v6_countContacts(lid), size = 1000, returned
 #' @param chunk_size 
 #' @param ... 
 #'
-#' @return
 #' @export
-#'
-#' @examples
 multi_edit <- function(list_id, contacts, chunk_size = 5000, ...) {
   n_chunks <- ceiling(nrow(contacts) / chunk_size)
   

@@ -1,7 +1,7 @@
 Package: vision6
 Title: Vision6 for R
 Description: vision6 is an R interface to the Vision6 email system.
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: person("Danny", "Smith", email="danny@gorcha.org",
     role=c("aut", "cre"))
 Depends:
@@ -12,3 +12,4 @@ Depends:
 Suggests:
     testthat (>= 0.2)
 License: MIT
+RoxygenNote: 6.0.1
